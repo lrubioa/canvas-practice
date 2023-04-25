@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hi</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1500" height="1000" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.</canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+
+        // multi way
+        var rectX = 250;
+        var rectY = 250;
+        var rectW = 100;
+        var rectH = 100;
+
+        for (i = 0; i < 5; i++) {
+            ctx.rect(rectX, rectY, rectW, rectH);
+            rectX -= 50;
+            rectY -= 50;
+            rectW += 100;
+            rectH += 100;
+
+            ctx.stroke();
+        }
+        // multi end
+
+        // alt rect
+        // ctx.rect(150,150,100,100);
+        // ctx.rect(100,100,200,200);
+        // ctx.stroke();
+        // alt rect end
+
+
+        // multi circle
+        var circleR = 10
+        for (j = 0; j < 5; j++) {
+            ctx.beginPath();
+            ctx.arc(1000, 300, circleR, 0 , 5 * Math.PI);
+            ctx.stroke(); 
+            circleR += 10
+        }
+        // multi circle end
+
+        // alt circle
+        // ctx.beginPath();
+        // ctx.arc(1000, 300, 150, 0, 5 * Math.PI)
+        // ctx.stroke();
+        // alt circle end
+
+
+        // parallel lines, both ways
+        // horizontal lines 
+        ctx.moveTo(700, 600);
+        ctx.lineTo(1000, 600);
+        ctx.stroke();
+        ctx.moveTo(700, 700);
+        ctx.lineTo(1000, 700);
+        ctx.stroke();
+        // horizontal end
+
+        // vertical lines
+        ctx.moveTo(800, 500);
+        ctx.lineTo(800, 800);
+        ctx.stroke();
+        ctx.moveTo(900, 500);
+        ctx.lineTo(900, 800);
+        ctx.stroke();
+        // vertical end
+
+
+        // triangle
+        ctx.moveTo(100, 600);
+        ctx.lineTo(100, 900);
+        ctx.stroke();
+        
+        ctx.moveTo(100, 600);
+        ctx.lineTo(400, 600);
+        ctx.stroke();
+        
+        ctx.moveTo(100, 600);
+        ctx.lineTo(100, 900);
+        ctx.stroke();
+        // triangle end
+    </script>
+</body>
+
+</html>
